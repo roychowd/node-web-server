@@ -1,6 +1,6 @@
 const express = require('express');
 const hbs = require('hbs');
-const fs = require('fs');
+const fs = require('fs'); 
 
 
 const port = process.env.PORT || 3000;
@@ -57,6 +57,12 @@ app.get('/bad', (req,res) => {
     res.send({
         errorMessage: "unable to handle"
     })
+});
+
+app.get('/projects', (req,res) => {
+    res.render('projects.hbs', {
+        pageTitle: 'Projects'
+    });
 })
 
 
